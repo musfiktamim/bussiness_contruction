@@ -43,7 +43,7 @@ export async function POST(request: Request) {
   }
 }
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
 
     const blogs = await prisma.blogs.findMany({
