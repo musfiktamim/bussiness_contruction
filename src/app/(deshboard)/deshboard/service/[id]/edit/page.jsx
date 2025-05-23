@@ -6,7 +6,7 @@ import React from 'react'
 
 
 
-async function ServiceEditpage({params}:{params:{id:string}}) {
+async function ServiceEditpage({params}) {
   const service = await prisma.services.findUnique({
     where:{
       id:params.id
