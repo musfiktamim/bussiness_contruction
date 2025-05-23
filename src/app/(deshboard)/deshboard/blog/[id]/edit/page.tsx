@@ -1,26 +1,30 @@
+import React from 'react';
+import { notFound } from 'next/navigation';
 import BlogEditBox from '@/Components/Blog/BlogEditBox';
-import prisma from '@/lib/PrismClient'
-import { notFound, useParams } from 'next/navigation'
-import React from 'react'
+import prisma from '@/lib/PrismClient';
 
+type BlogEditPageProps = {
+  params: {
+    id: string;
+  };
+};
 
+const BlogEditPage = async ({ params }: BlogEditPageProps) => {
+  const blog = await prisma.blogs.findUnique({
+    where: {
+      id: params.id,
+    },
+  });
 
-
-async function BlogEditpage() {
-  const params = await useParams()
-  const blogs = await prisma.blogs.findUnique({
-    where:{
-      id: String(params.id)
-    }
-  })
-  
-  if(!blogs) notFound();
+  if (!blog) {
+    notFound();
+  }
 
   return (
     <div>
-      <BlogEditBox item={blogs} />
+      <BlogEditBox item={blog} />
     </div>
-  )
-}
+  );
+};
 
-export default BlogEditpage
+export default BlogEditPage;
