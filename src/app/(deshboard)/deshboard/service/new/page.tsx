@@ -57,15 +57,15 @@ function ServiceEditpage() {
                 toast.error(data.message || "Something went wrong")
             }
             console.log(data)
-            if(response.status!==201){
+            if (response.status !== 201) {
                 toast.error(data.message || "Something went wrong")
-            }else{
+            } else {
                 toast.success(data.message || "Something went wrong")
-                setFormData({description:"",title:"",preview:null})
+                setFormData({ description: "", title: "", preview: null })
             }
         } catch (error) {
-            if(error instanceof Error)
-            toast.error(error.message)
+            if (error instanceof Error)
+                toast.error(error.message)
         } finally {
             setLoading(false);
         }
@@ -86,11 +86,11 @@ function ServiceEditpage() {
                 {/* Description */}
                 <div className='flex flex-col gap-2'>
                     <Label className='text-base text-gray-700'>Description</Label>
-                    <Textarea name='description' 
-                      onChange={handleChange} 
-                      value={formData.description} 
-                      placeholder='Enter your project description...' 
-                      className='min-h-[100px] max-h-[200px]'
+                    <Textarea name='description'
+                        onChange={handleChange}
+                        value={formData.description}
+                        placeholder='Enter your project description...'
+                        className='min-h-[100px] max-h-[200px]'
                     />
                 </div>
 
@@ -111,7 +111,7 @@ function ServiceEditpage() {
                             <Image
                                 src={formData.preview}
                                 alt='Project Preview'
-                                className='w-full max-h-64 object-contain rounded-md border'
+                                className='rounded-md w-full max-h-64 border'
                             />
                         </div>
                     )}

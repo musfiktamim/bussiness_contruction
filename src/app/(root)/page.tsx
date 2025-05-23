@@ -21,6 +21,9 @@ async function Homepage() {
     take: 8,
     orderBy: {
       createdAt: "desc"
+    },
+    where: {
+      published: true
     }
   })
 
@@ -29,18 +32,18 @@ async function Homepage() {
     orderBy: {
       createdAt: "desc"
     },
-    where:{
-      published:true
+    where: {
+      published: true
     }
   })
 
   const blogs = await prisma.blogs.findMany({
-    take:10,
-    orderBy:{
-      createdAt:"desc",
+    take: 10,
+    orderBy: {
+      createdAt: "desc",
     },
-    where:{
-      published:true
+    where: {
+      published: true
     }
   })
 
@@ -54,11 +57,11 @@ async function Homepage() {
       </div>
 
       {/* Services Section */}
-      {/* {services.length > 0 && ( */}
+      {services.length > 0 && (
         <div className="lg:px-[10%] bg-gradient-to-br from-[#f9f9f9] to-[#e0e0e0] p-5 transition-all duration-500 hover:bg-[#f3f3f3]">
           <ServicesBox services={services} />
         </div>
-      {/* )} */}
+      )}
 
       {/* Projects Section */}
       {projects.length > 0 && (

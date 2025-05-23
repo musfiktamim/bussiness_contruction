@@ -51,7 +51,7 @@ async function Servicepage() {
               <TableRow key={index}>
                 <TableCell className="font-medium">{index}</TableCell>
                 <TableCell>
-                  <img src={item.image?.url} alt={item.title} className='w-10 h-10' />
+                  <img src={item.image} alt={item.title} className='w-10 h-10' />
                 </TableCell>
                 <TableCell>{item.title}</TableCell>
                 <TableCell className='lg:flex hidden'>{item.description.slice(0, 80)}</TableCell>

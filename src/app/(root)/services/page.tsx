@@ -7,6 +7,9 @@ async function Servicepage() {
         take: 10,
         orderBy: {
             createdAt: "desc"
+        },
+        where:{
+            published:true
         }
     })
     return (

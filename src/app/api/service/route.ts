@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json(
-      { message: "Blog saved successfully", project },
+      { message: "Service saved successfully", project },
       { status: 201 }
     );
   } catch (error) {
@@ -91,6 +91,36 @@ export async function PATCH(request: Request) {
       },
       { status: 200 }
     );
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "An unknown error occurred";
+    return NextResponse.json({ message }, { status: 500 });
+  }
+}
+
+export async function DELETE(request: Request) {
+  try {
+    const { id } = await request.json();
+    if (!id) {
+      return NextResponse.json(
+        { message: "Service ID is required" },
+        { status: 400 }
+      );
+    }
+
+    const res = await prisma.services.delete({
+      where: {
+        id: id
+      }
+    })
+
+    return NextResponse.json(
+      {
+        message: "Service deleted successfully",
+      },
+      { status: 200 }
+    );
+
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "An unknown error occurred";

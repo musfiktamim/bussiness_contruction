@@ -12,13 +12,13 @@ type service = {
 function ServicesCard({ item }:{item:service}) {
   return (
     <div
-      className='w-[250px] gap-3 px-6 bg-white h-auto rounded-xl grayscale hover:grayscale-0 hover:scale-[1.03] hover:shadow-xl transition-all duration-500 ease-in-out grow flex flex-col items-center py-10 group border border-gray-200 hover:border-amber-400'
+      className='w-[250px] gap-3 px-6 bg-white h-auto rounded-xl grayscale hover:grayscale-0 hover:scale-[1.01] hover:shadow-xl transition-all duration-500 ease-in-out grow flex flex-col items-center py-10 group border border-gray-200 hover:border-amber-400'
     >
-      <div className="relative">
+      <div className="w-20  transition-transform duration-500  h-20 group-hover:-translate-y-[10px] relative">
         <Image
           src={item.image}
           alt={item.title}
-          className='w-20 h-20 transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-110'
+          fill
         />
         <div className='absolute inset-0 blur-md opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-amber-400 rounded-full' />
       </div>

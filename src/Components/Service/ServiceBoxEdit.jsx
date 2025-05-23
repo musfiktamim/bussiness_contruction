@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 import { toast } from "sonner";
 import { Textarea } from "@/Components/ui/textarea";
 import { Switch } from "../ui/switch";
+import Image from "next/image";
 
 function ServiceBoxEdit({ item }) {
   const [loading, setLoading] = useState(false);
@@ -39,11 +40,11 @@ function ServiceBoxEdit({ item }) {
     setLoading(true);
     try {
       const response = await fetch("/api/service", {
-        method: "POST",
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...{ id: item.id }, ...formData }),
       });
 
       const data = await response.json();
@@ -69,6 +70,41 @@ function ServiceBoxEdit({ item }) {
     }
     redirect("/deshboard/service");
   };
+
+  const handleDelete = async (e) => {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/service", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...{ id: item.id }}),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        toast.error(data.message || "Something went wrong");
+      }
+      if (response.status !== 200) {
+        toast.error(data.message || "Something went wrong");
+      } else {
+        toast.success(data.message || "Something went wrong");
+        setFormData({
+          description: item.description,
+          title: item.title,
+          preview: null,
+          publish: item.published,
+        });
+      }
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setLoading(false);
+    }
+    redirect("/deshboard/service");
+  }
 
   return (
     <div className="w-full px-2 flex justify-center mt-10">
@@ -115,21 +151,29 @@ function ServiceBoxEdit({ item }) {
           {formData.preview && (
             <div className="mt-4">
               <p className="text-sm text-gray-600 mb-2">After:</p>
-              <img
-                src={formData.preview}
-                alt="Project Preview"
-                className="w-full max-h-64 object-contain rounded-md border"
-              />
+              <div className="w-full py-3 max-h-64 border rounded-md">
+                <Image
+                  src={formData.preview}
+                  alt="Project Preview"
+                  width={200}
+                  height={300}
+                  className="object-contain px-2 self-center place-self-center border-gray-500"
+                />
+              </div>
             </div>
           )}
-          {(!formData.preview || item.image?.url) && (
+          {(!formData.preview || item.image) && (
             <div className="mt-4">
               <p className="text-sm text-gray-600 mb-2">Before:</p>
-              <img
-                src={item.image?.url}
-                alt="Project Preview"
-                className="w-full max-h-64 object-contain rounded-md border"
-              />
+              <div className="w-full py-3 max-h-64 border rounded-md">
+                <Image
+                  src={item.image}
+                  alt="Project Preview"
+                  width={200}
+                  height={300}
+                  className="object-contain px-2 self-center place-self-center border-gray-500"
+                />
+              </div>
             </div>
           )}
 
@@ -147,9 +191,14 @@ function ServiceBoxEdit({ item }) {
         </div>
 
         {/* Submit */}
-        <Button disabled={loading} type="submit" className="w-fit py-3 px-6 self-end">
-          Edit
-        </Button>
+        <div className="flex justify-between">
+          <Button onClick={handleDelete} disabled={loading} variant={"destructive"} type="button" className="w-fit py-3 px-6">
+            Delete
+          </Button>
+          <Button disabled={loading} type="submit" className="w-fit py-3 px-6">
+            Edit
+          </Button>
+        </div>
       </form>
     </div>
   );
