@@ -8,7 +8,7 @@ import React from 'react'
 
 async function BlogEditpage({params}:{params:{id:string}}) {
   
-  let blogs = await prisma.blogs.findUnique({
+  const blogs = await prisma.blogs.findUnique({
     where:{
       id:params.id
     }
