@@ -20,7 +20,7 @@ export default async function BlogPost({ params }) {
       <div className="mb-8">
         <Link
           href="/blogs"
-          className="inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors"
+          className="inline-flex items-center text-black hover:text-indigo-800 transition-colors"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to all posts
@@ -41,7 +41,7 @@ export default async function BlogPost({ params }) {
 
         <div className="relative aspect-[16/9] w-full rounded-2xl bg-gray-100 overflow-hidden mb-10">
           <img
-            src={post.image?.url}
+            src={post.image}
             alt={post.title}
             className="w-full h-full object-cover"
           />

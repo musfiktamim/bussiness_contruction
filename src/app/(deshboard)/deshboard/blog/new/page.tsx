@@ -75,7 +75,7 @@ function BlogNewpage() {
     return (
         <div className='w-full px-2 flex justify-center mt-10'>
             <form onSubmit={handleSubmit} className='lg:w-[60%] flex flex-col border px-4 py-10 rounded-xl border-gray-300 shadow-md gap-6 md:w-[70%] w-full bg-white'>
-                <h2 className='text-xl font-semibold text-center mb-4'>Create New Service</h2>
+                <h2 className='text-xl font-semibold text-center mb-4'>Create New Blog</h2>
 
                 {/* Title */}
                 <div className='flex flex-col gap-2'>

@@ -47,7 +47,7 @@ async function Blogpage() {
             blogs.map((item, index: number) => <TableRow key={index}>
               <TableCell className="font-medium">{index}</TableCell>
               <TableCell>
-                <Image src={BlogImage} alt={item.title} className='w-10 h-10' />
+                <Image src={item.image} alt={item.title} width={40} height={40} className='w-10 h-10' />
               </TableCell>
               <TableCell>{item.title}</TableCell>
               <TableCell className='lg:flex hidden'>{item.content.slice(0, 80)}</TableCell>

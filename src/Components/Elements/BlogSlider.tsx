@@ -9,9 +9,7 @@ import BlogCard from "../Blog/Blogcard";
 interface BlogPost {
   title: string;
   excerpt: string;
-  image: {
-    url:string
-  };
+  image:string;
   createdAt: Date;
   id: string;
 }

@@ -68,13 +68,13 @@ function BlogEditBox({ item }) {
           preview: null,
           publish: !!item.published,
         });
-        redirect("/deshboard/blog");
       }
     } catch (error) {
       toast.error(error?.message || "Unexpected error");
     } finally {
       setLoading(false);
     }
+    redirect("/deshboard/blog");
   };
 
   return (

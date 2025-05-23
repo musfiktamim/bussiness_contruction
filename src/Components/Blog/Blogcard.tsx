@@ -5,9 +5,7 @@ import Link from "next/link";
 interface BlogCardProps {
   title: string;
   excerpt: string;
-  image: {
-    url:string
-  };
+  image:string;
   createdAt: Date;
   id: string;
 }
@@ -19,8 +17,9 @@ export default function BlogCard({item}:{item:BlogCardProps}) {
       {/* Image Section */}
       <div className="relative h-56 shrink-0 overflow-hidden">
         <Image
-          src={item.image.url}
+          src={item.image}
           alt={item.title}
+          fill
           className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-105"
         />
         
