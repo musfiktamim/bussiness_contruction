@@ -1,16 +1,16 @@
 import BlogEditBox from '@/Components/Blog/BlogEditBox';
 import prisma from '@/lib/PrismClient'
-import { notFound } from 'next/navigation'
+import { notFound, useParams } from 'next/navigation'
 import React from 'react'
 
 
 
 
-async function BlogEditpage({params}:{params:{id:string}}) {
-  
+async function BlogEditpage() {
+  const params = await useParams()
   const blogs = await prisma.blogs.findUnique({
     where:{
-      id:params.id
+      id: String(params.id)
     }
   })
   
