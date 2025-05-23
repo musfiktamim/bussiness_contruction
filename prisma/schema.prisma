@@ -25,7 +25,7 @@ model Reviews {
 model Services {
   id String @id @unique @default(cuid())
 
-  image       Json
+  image       String
   title       String
   description String
 
@@ -38,7 +38,7 @@ model Services {
 model Projects {
   id String @id @unique @default(cuid())
 
-  image       Json
+  image       String
   title       String
   description String
 
@@ -51,7 +51,7 @@ model Projects {
 model Blogs {
   id String @id @unique @default(cuid())
 
-  image   Json?
+  image   String
   title   String
   content String
 

@@ -6,9 +6,10 @@ import { Label } from '@/Components/ui/label'
 import { redirect } from 'next/navigation'
 import { toast } from 'sonner'
 import { Textarea } from '@/Components/ui/textarea'
+import Image from 'next/image'
 
 function BlogNewpage() {
-    const [loading, setLoading] = useState<Boolean>(false)
+    const [loading, setLoading] = useState(false)
     const [formData, setFormData] = useState<{
         title: string,
         description: string,
@@ -62,7 +63,8 @@ function BlogNewpage() {
                 toast.success(data.message || "Something went wrong")
                 setFormData({description:"",title:"",preview:null})
             }
-        } catch (error: any) {
+        } catch (error) {
+            if(error instanceof Error)
             toast.error(error.message)
         } finally {
             setLoading(false);
@@ -106,7 +108,7 @@ function BlogNewpage() {
                     {formData.preview && (
                         <div className='mt-4'>
                             <p className='text-sm text-gray-600 mb-2'>Preview:</p>
-                            <img
+                            <Image
                                 src={formData.preview}
                                 alt='Project Preview'
                                 className='w-full max-h-64 object-contain rounded-md border'

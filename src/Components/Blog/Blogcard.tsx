@@ -1,4 +1,5 @@
 import { Calendar } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 interface BlogCardProps {
@@ -17,7 +18,7 @@ export default function BlogCard({item}:{item:BlogCardProps}) {
       
       {/* Image Section */}
       <div className="relative h-56 shrink-0 overflow-hidden">
-        <img
+        <Image
           src={item.image.url}
           alt={item.title}
           className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-105"

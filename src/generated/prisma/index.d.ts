@@ -2389,6 +2389,7 @@ export namespace Prisma {
 
   export type ServicesMinAggregateOutputType = {
     id: string | null
+    image: string | null
     title: string | null
     description: string | null
     published: boolean | null
@@ -2398,6 +2399,7 @@ export namespace Prisma {
 
   export type ServicesMaxAggregateOutputType = {
     id: string | null
+    image: string | null
     title: string | null
     description: string | null
     published: boolean | null
@@ -2419,6 +2421,7 @@ export namespace Prisma {
 
   export type ServicesMinAggregateInputType = {
     id?: true
+    image?: true
     title?: true
     description?: true
     published?: true
@@ -2428,6 +2431,7 @@ export namespace Prisma {
 
   export type ServicesMaxAggregateInputType = {
     id?: true
+    image?: true
     title?: true
     description?: true
     published?: true
@@ -2520,7 +2524,7 @@ export namespace Prisma {
 
   export type ServicesGroupByOutputType = {
     id: string
-    image: JsonValue
+    image: string
     title: string
     description: string
     published: boolean
@@ -2592,7 +2596,7 @@ export namespace Prisma {
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      image: Prisma.JsonValue
+      image: string
       title: string
       description: string
       published: boolean
@@ -3022,7 +3026,7 @@ export namespace Prisma {
    */
   interface ServicesFieldRefs {
     readonly id: FieldRef<"Services", 'String'>
-    readonly image: FieldRef<"Services", 'Json'>
+    readonly image: FieldRef<"Services", 'String'>
     readonly title: FieldRef<"Services", 'String'>
     readonly description: FieldRef<"Services", 'String'>
     readonly published: FieldRef<"Services", 'Boolean'>
@@ -3404,6 +3408,7 @@ export namespace Prisma {
 
   export type ProjectsMinAggregateOutputType = {
     id: string | null
+    image: string | null
     title: string | null
     description: string | null
     published: boolean | null
@@ -3413,6 +3418,7 @@ export namespace Prisma {
 
   export type ProjectsMaxAggregateOutputType = {
     id: string | null
+    image: string | null
     title: string | null
     description: string | null
     published: boolean | null
@@ -3434,6 +3440,7 @@ export namespace Prisma {
 
   export type ProjectsMinAggregateInputType = {
     id?: true
+    image?: true
     title?: true
     description?: true
     published?: true
@@ -3443,6 +3450,7 @@ export namespace Prisma {
 
   export type ProjectsMaxAggregateInputType = {
     id?: true
+    image?: true
     title?: true
     description?: true
     published?: true
@@ -3535,7 +3543,7 @@ export namespace Prisma {
 
   export type ProjectsGroupByOutputType = {
     id: string
-    image: JsonValue
+    image: string
     title: string
     description: string
     published: boolean
@@ -3607,7 +3615,7 @@ export namespace Prisma {
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      image: Prisma.JsonValue
+      image: string
       title: string
       description: string
       published: boolean
@@ -4037,7 +4045,7 @@ export namespace Prisma {
    */
   interface ProjectsFieldRefs {
     readonly id: FieldRef<"Projects", 'String'>
-    readonly image: FieldRef<"Projects", 'Json'>
+    readonly image: FieldRef<"Projects", 'String'>
     readonly title: FieldRef<"Projects", 'String'>
     readonly description: FieldRef<"Projects", 'String'>
     readonly published: FieldRef<"Projects", 'Boolean'>
@@ -4419,6 +4427,7 @@ export namespace Prisma {
 
   export type BlogsMinAggregateOutputType = {
     id: string | null
+    image: string | null
     title: string | null
     content: string | null
     published: boolean | null
@@ -4428,6 +4437,7 @@ export namespace Prisma {
 
   export type BlogsMaxAggregateOutputType = {
     id: string | null
+    image: string | null
     title: string | null
     content: string | null
     published: boolean | null
@@ -4449,6 +4459,7 @@ export namespace Prisma {
 
   export type BlogsMinAggregateInputType = {
     id?: true
+    image?: true
     title?: true
     content?: true
     published?: true
@@ -4458,6 +4469,7 @@ export namespace Prisma {
 
   export type BlogsMaxAggregateInputType = {
     id?: true
+    image?: true
     title?: true
     content?: true
     published?: true
@@ -4550,7 +4562,7 @@ export namespace Prisma {
 
   export type BlogsGroupByOutputType = {
     id: string
-    image: JsonValue | null
+    image: string
     title: string
     content: string
     published: boolean
@@ -4622,7 +4634,7 @@ export namespace Prisma {
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      image: Prisma.JsonValue | null
+      image: string
       title: string
       content: string
       published: boolean
@@ -5052,7 +5064,7 @@ export namespace Prisma {
    */
   interface BlogsFieldRefs {
     readonly id: FieldRef<"Blogs", 'String'>
-    readonly image: FieldRef<"Blogs", 'Json'>
+    readonly image: FieldRef<"Blogs", 'String'>
     readonly title: FieldRef<"Blogs", 'String'>
     readonly content: FieldRef<"Blogs", 'String'>
     readonly published: FieldRef<"Blogs", 'Boolean'>
@@ -7557,46 +7569,6 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-  export const JsonNullValueInput: {
-    JsonNull: typeof JsonNull
-  };
-
-  export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
-
-
-  export const NullableJsonNullValueInput: {
-    DbNull: typeof DbNull,
-    JsonNull: typeof JsonNull
-  };
-
-  export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
-
-
-  export const JsonNullValueFilter: {
-    DbNull: typeof DbNull,
-    JsonNull: typeof JsonNull,
-    AnyNull: typeof AnyNull
-  };
-
-  export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
-
-
-  export const QueryMode: {
-    default: 'default',
-    insensitive: 'insensitive'
-  };
-
-  export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
-
-
-  export const NullsOrder: {
-    first: 'first',
-    last: 'last'
-  };
-
-  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
-
-
   /**
    * Field references
    */
@@ -7620,20 +7592,6 @@ export namespace Prisma {
    * Reference to a field of type 'DateTime'
    */
   export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
-    
-
-
-  /**
-   * Reference to a field of type 'Json'
-   */
-  export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
-    
-
-
-  /**
-   * Reference to a field of type 'QueryMode'
-   */
-  export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
     
 
 
@@ -7723,7 +7681,7 @@ export namespace Prisma {
     OR?: ServicesWhereInput[]
     NOT?: ServicesWhereInput | ServicesWhereInput[]
     id?: StringFilter<"Services"> | string
-    image?: JsonFilter<"Services">
+    image?: StringFilter<"Services"> | string
     title?: StringFilter<"Services"> | string
     description?: StringFilter<"Services"> | string
     published?: BoolFilter<"Services"> | boolean
@@ -7746,7 +7704,7 @@ export namespace Prisma {
     AND?: ServicesWhereInput | ServicesWhereInput[]
     OR?: ServicesWhereInput[]
     NOT?: ServicesWhereInput | ServicesWhereInput[]
-    image?: JsonFilter<"Services">
+    image?: StringFilter<"Services"> | string
     title?: StringFilter<"Services"> | string
     description?: StringFilter<"Services"> | string
     published?: BoolFilter<"Services"> | boolean
@@ -7772,7 +7730,7 @@ export namespace Prisma {
     OR?: ServicesScalarWhereWithAggregatesInput[]
     NOT?: ServicesScalarWhereWithAggregatesInput | ServicesScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Services"> | string
-    image?: JsonWithAggregatesFilter<"Services">
+    image?: StringWithAggregatesFilter<"Services"> | string
     title?: StringWithAggregatesFilter<"Services"> | string
     description?: StringWithAggregatesFilter<"Services"> | string
     published?: BoolWithAggregatesFilter<"Services"> | boolean
@@ -7785,7 +7743,7 @@ export namespace Prisma {
     OR?: ProjectsWhereInput[]
     NOT?: ProjectsWhereInput | ProjectsWhereInput[]
     id?: StringFilter<"Projects"> | string
-    image?: JsonFilter<"Projects">
+    image?: StringFilter<"Projects"> | string
     title?: StringFilter<"Projects"> | string
     description?: StringFilter<"Projects"> | string
     published?: BoolFilter<"Projects"> | boolean
@@ -7808,7 +7766,7 @@ export namespace Prisma {
     AND?: ProjectsWhereInput | ProjectsWhereInput[]
     OR?: ProjectsWhereInput[]
     NOT?: ProjectsWhereInput | ProjectsWhereInput[]
-    image?: JsonFilter<"Projects">
+    image?: StringFilter<"Projects"> | string
     title?: StringFilter<"Projects"> | string
     description?: StringFilter<"Projects"> | string
     published?: BoolFilter<"Projects"> | boolean
@@ -7834,7 +7792,7 @@ export namespace Prisma {
     OR?: ProjectsScalarWhereWithAggregatesInput[]
     NOT?: ProjectsScalarWhereWithAggregatesInput | ProjectsScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Projects"> | string
-    image?: JsonWithAggregatesFilter<"Projects">
+    image?: StringWithAggregatesFilter<"Projects"> | string
     title?: StringWithAggregatesFilter<"Projects"> | string
     description?: StringWithAggregatesFilter<"Projects"> | string
     published?: BoolWithAggregatesFilter<"Projects"> | boolean
@@ -7847,7 +7805,7 @@ export namespace Prisma {
     OR?: BlogsWhereInput[]
     NOT?: BlogsWhereInput | BlogsWhereInput[]
     id?: StringFilter<"Blogs"> | string
-    image?: JsonNullableFilter<"Blogs">
+    image?: StringFilter<"Blogs"> | string
     title?: StringFilter<"Blogs"> | string
     content?: StringFilter<"Blogs"> | string
     published?: BoolFilter<"Blogs"> | boolean
@@ -7857,7 +7815,7 @@ export namespace Prisma {
 
   export type BlogsOrderByWithRelationInput = {
     id?: SortOrder
-    image?: SortOrderInput | SortOrder
+    image?: SortOrder
     title?: SortOrder
     content?: SortOrder
     published?: SortOrder
@@ -7870,7 +7828,7 @@ export namespace Prisma {
     AND?: BlogsWhereInput | BlogsWhereInput[]
     OR?: BlogsWhereInput[]
     NOT?: BlogsWhereInput | BlogsWhereInput[]
-    image?: JsonNullableFilter<"Blogs">
+    image?: StringFilter<"Blogs"> | string
     title?: StringFilter<"Blogs"> | string
     content?: StringFilter<"Blogs"> | string
     published?: BoolFilter<"Blogs"> | boolean
@@ -7880,7 +7838,7 @@ export namespace Prisma {
 
   export type BlogsOrderByWithAggregationInput = {
     id?: SortOrder
-    image?: SortOrderInput | SortOrder
+    image?: SortOrder
     title?: SortOrder
     content?: SortOrder
     published?: SortOrder
@@ -7896,7 +7854,7 @@ export namespace Prisma {
     OR?: BlogsScalarWhereWithAggregatesInput[]
     NOT?: BlogsScalarWhereWithAggregatesInput | BlogsScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Blogs"> | string
-    image?: JsonNullableWithAggregatesFilter<"Blogs">
+    image?: StringWithAggregatesFilter<"Blogs"> | string
     title?: StringWithAggregatesFilter<"Blogs"> | string
     content?: StringWithAggregatesFilter<"Blogs"> | string
     published?: BoolWithAggregatesFilter<"Blogs"> | boolean
@@ -8100,7 +8058,7 @@ export namespace Prisma {
 
   export type ServicesCreateInput = {
     id?: string
-    image: JsonNullValueInput | InputJsonValue
+    image: string
     title: string
     description: string
     published?: boolean
@@ -8110,7 +8068,7 @@ export namespace Prisma {
 
   export type ServicesUncheckedCreateInput = {
     id?: string
-    image: JsonNullValueInput | InputJsonValue
+    image: string
     title: string
     description: string
     published?: boolean
@@ -8120,7 +8078,7 @@ export namespace Prisma {
 
   export type ServicesUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    image?: JsonNullValueInput | InputJsonValue
+    image?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
@@ -8130,7 +8088,7 @@ export namespace Prisma {
 
   export type ServicesUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    image?: JsonNullValueInput | InputJsonValue
+    image?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
@@ -8140,7 +8098,7 @@ export namespace Prisma {
 
   export type ServicesCreateManyInput = {
     id?: string
-    image: JsonNullValueInput | InputJsonValue
+    image: string
     title: string
     description: string
     published?: boolean
@@ -8150,7 +8108,7 @@ export namespace Prisma {
 
   export type ServicesUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    image?: JsonNullValueInput | InputJsonValue
+    image?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
@@ -8160,7 +8118,7 @@ export namespace Prisma {
 
   export type ServicesUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    image?: JsonNullValueInput | InputJsonValue
+    image?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
@@ -8170,7 +8128,7 @@ export namespace Prisma {
 
   export type ProjectsCreateInput = {
     id?: string
-    image: JsonNullValueInput | InputJsonValue
+    image: string
     title: string
     description: string
     published?: boolean
@@ -8180,7 +8138,7 @@ export namespace Prisma {
 
   export type ProjectsUncheckedCreateInput = {
     id?: string
-    image: JsonNullValueInput | InputJsonValue
+    image: string
     title: string
     description: string
     published?: boolean
@@ -8190,7 +8148,7 @@ export namespace Prisma {
 
   export type ProjectsUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    image?: JsonNullValueInput | InputJsonValue
+    image?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
@@ -8200,7 +8158,7 @@ export namespace Prisma {
 
   export type ProjectsUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    image?: JsonNullValueInput | InputJsonValue
+    image?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
@@ -8210,7 +8168,7 @@ export namespace Prisma {
 
   export type ProjectsCreateManyInput = {
     id?: string
-    image: JsonNullValueInput | InputJsonValue
+    image: string
     title: string
     description: string
     published?: boolean
@@ -8220,7 +8178,7 @@ export namespace Prisma {
 
   export type ProjectsUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    image?: JsonNullValueInput | InputJsonValue
+    image?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
@@ -8230,7 +8188,7 @@ export namespace Prisma {
 
   export type ProjectsUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    image?: JsonNullValueInput | InputJsonValue
+    image?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
@@ -8240,7 +8198,7 @@ export namespace Prisma {
 
   export type BlogsCreateInput = {
     id?: string
-    image?: NullableJsonNullValueInput | InputJsonValue
+    image: string
     title: string
     content: string
     published?: boolean
@@ -8250,7 +8208,7 @@ export namespace Prisma {
 
   export type BlogsUncheckedCreateInput = {
     id?: string
-    image?: NullableJsonNullValueInput | InputJsonValue
+    image: string
     title: string
     content: string
     published?: boolean
@@ -8260,7 +8218,7 @@ export namespace Prisma {
 
   export type BlogsUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    image?: NullableJsonNullValueInput | InputJsonValue
+    image?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
@@ -8270,7 +8228,7 @@ export namespace Prisma {
 
   export type BlogsUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    image?: NullableJsonNullValueInput | InputJsonValue
+    image?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
@@ -8280,7 +8238,7 @@ export namespace Prisma {
 
   export type BlogsCreateManyInput = {
     id?: string
-    image?: NullableJsonNullValueInput | InputJsonValue
+    image: string
     title: string
     content: string
     published?: boolean
@@ -8290,7 +8248,7 @@ export namespace Prisma {
 
   export type BlogsUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    image?: NullableJsonNullValueInput | InputJsonValue
+    image?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
@@ -8300,7 +8258,7 @@ export namespace Prisma {
 
   export type BlogsUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    image?: NullableJsonNullValueInput | InputJsonValue
+    image?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
@@ -8568,24 +8526,6 @@ export namespace Prisma {
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
-  export type JsonFilter<$PrismaModel = never> =
-    | PatchUndefined<
-        Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string
-    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-  }
 
   export type BoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
@@ -8604,6 +8544,7 @@ export namespace Prisma {
 
   export type ServicesMaxOrderByAggregateInput = {
     id?: SortOrder
+    image?: SortOrder
     title?: SortOrder
     description?: SortOrder
     published?: SortOrder
@@ -8613,32 +8554,12 @@ export namespace Prisma {
 
   export type ServicesMinOrderByAggregateInput = {
     id?: SortOrder
+    image?: SortOrder
     title?: SortOrder
     description?: SortOrder
     published?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-  }
-  export type JsonWithAggregatesFilter<$PrismaModel = never> =
-    | PatchUndefined<
-        Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonWithAggregatesFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string
-    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedJsonFilter<$PrismaModel>
-    _max?: NestedJsonFilter<$PrismaModel>
   }
 
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -8661,6 +8582,7 @@ export namespace Prisma {
 
   export type ProjectsMaxOrderByAggregateInput = {
     id?: SortOrder
+    image?: SortOrder
     title?: SortOrder
     description?: SortOrder
     published?: SortOrder
@@ -8670,34 +8592,12 @@ export namespace Prisma {
 
   export type ProjectsMinOrderByAggregateInput = {
     id?: SortOrder
+    image?: SortOrder
     title?: SortOrder
     description?: SortOrder
     published?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-  }
-  export type JsonNullableFilter<$PrismaModel = never> =
-    | PatchUndefined<
-        Either<Required<JsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonNullableFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonNullableFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string
-    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-  }
-
-  export type SortOrderInput = {
-    sort: SortOrder
-    nulls?: NullsOrder
   }
 
   export type BlogsCountOrderByAggregateInput = {
@@ -8712,6 +8612,7 @@ export namespace Prisma {
 
   export type BlogsMaxOrderByAggregateInput = {
     id?: SortOrder
+    image?: SortOrder
     title?: SortOrder
     content?: SortOrder
     published?: SortOrder
@@ -8721,32 +8622,12 @@ export namespace Prisma {
 
   export type BlogsMinOrderByAggregateInput = {
     id?: SortOrder
+    image?: SortOrder
     title?: SortOrder
     content?: SortOrder
     published?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-  }
-  export type JsonNullableWithAggregatesFilter<$PrismaModel = never> =
-    | PatchUndefined<
-        Either<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonNullableWithAggregatesFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string
-    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedJsonNullableFilter<$PrismaModel>
-    _max?: NestedJsonNullableFilter<$PrismaModel>
   }
 
   export type ContactsCountOrderByAggregateInput = {
@@ -8927,24 +8808,6 @@ export namespace Prisma {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
-  export type NestedJsonFilter<$PrismaModel = never> =
-    | PatchUndefined<
-        Either<Required<NestedJsonFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>,
-        Required<NestedJsonFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>
-
-  export type NestedJsonFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string
-    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-  }
 
   export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
@@ -8952,35 +8815,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedBoolFilter<$PrismaModel>
     _max?: NestedBoolFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-  export type NestedJsonNullableFilter<$PrismaModel = never> =
-    | PatchUndefined<
-        Either<Required<NestedJsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>,
-        Required<NestedJsonNullableFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>
-
-  export type NestedJsonNullableFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string
-    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
 

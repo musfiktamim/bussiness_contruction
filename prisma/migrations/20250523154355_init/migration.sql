@@ -12,7 +12,7 @@ CREATE TABLE "Reviews" (
 -- CreateTable
 CREATE TABLE "Services" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "image" JSONB NOT NULL,
+    "image" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "published" BOOLEAN NOT NULL DEFAULT false,
@@ -23,7 +23,7 @@ CREATE TABLE "Services" (
 -- CreateTable
 CREATE TABLE "Projects" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "image" JSONB NOT NULL,
+    "image" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "published" BOOLEAN NOT NULL DEFAULT false,
@@ -34,7 +34,7 @@ CREATE TABLE "Projects" (
 -- CreateTable
 CREATE TABLE "Blogs" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "image" JSONB,
+    "image" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "content" TEXT NOT NULL,
     "published" BOOLEAN NOT NULL DEFAULT false,

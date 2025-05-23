@@ -11,8 +11,7 @@ type ReviewBody = {
 
 export async function POST(request: NextRequest) {
   try {
-    const body: ReviewBody = await request.json();
-
+    const body = (await request.json()) as ReviewBody;
     const { name, email, review, rate } = body;
 
     if (!name || !email || !review || typeof rate !== "number") {
@@ -30,22 +29,24 @@ export async function POST(request: NextRequest) {
         rate,
       },
     });
-    if (!createdReview.id) {
+
+    if (!createdReview?.id) {
       return NextResponse.json(
         { message: "Failed to save review. Ensure data is valid." },
         { status: 500 }
       );
     }
 
-    return NextResponse.json({ message: "successfully created" },{ status: 201 })
+    return NextResponse.json(
+      { message: "Successfully created" },
+      { status: 201 }
+    );
+  } catch (error) {
+    const message =
+      error instanceof PrismaClientRustPanicError || error instanceof Error
+        ? error.message
+        : "An unknown error occurred.";
 
-} catch (error: unknown) {
-  const message =
-    error instanceof PrismaClientRustPanicError || error instanceof Error
-      ? error.message
-      : "An unknown error occurred.";
-
-  return NextResponse.json({ message }, { status: 500 });
-}
-// return NextResponse.redirect(new URL("/client_reviews", request.url));
+    return NextResponse.json({ message }, { status: 500 });
+  }
 }
