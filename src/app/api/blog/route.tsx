@@ -29,7 +29,7 @@ export async function POST(request: Request) {
       { message: "Blog saved successfully", blog: blogs },
       { status: 201 }
     );
-  } catch (error: unknown) {
+  } catch (error) {
     if (error instanceof Error) {
       return NextResponse.json(
         { message: error.message },
@@ -55,7 +55,7 @@ export async function GET() {
 
 
     return NextResponse.json({data:blogs});
-  } catch (error: unknown) {
+  } catch (error) {
     if (error instanceof Error) {
       return NextResponse.json(
         { message: error.message },
@@ -106,7 +106,7 @@ export async function PATCH(request: Request) {
       message: "Blog updated successfully",
       blog: updatedBlog,
     });
-  } catch (error: unknown) {
+  } catch (error) {
     if (error instanceof Error) {
       return NextResponse.json(
         { message: error.message },
