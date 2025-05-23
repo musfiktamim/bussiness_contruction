@@ -1,9 +1,16 @@
+import { FC } from 'react'
 import BlogEditBox from '@/Components/Blog/BlogEditBox'
 import prisma from '@/lib/PrismClient'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-async function ServiceEditpage({params}:{params:{id:string}}): Promise<React.JSX.Element> {
+interface EditPageProps {
+  params: {
+    id: string;
+  };
+}
+
+const ServiceEditpage :FC<EditPageProps> =async ({params}) => {
   
   const blogs = await prisma.blogs.findUnique({
     where:{
