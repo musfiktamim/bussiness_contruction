@@ -44,7 +44,6 @@ async function Homepage() {
     }
   })
 
-  console.log(reviews);
   return (
     <div className="mt-2 flex flex-col">
       <HomeBox />

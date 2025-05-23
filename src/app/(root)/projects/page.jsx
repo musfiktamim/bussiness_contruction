@@ -8,9 +8,6 @@ async function ProjectsPage() {
         orderBy: {
             createdAt: "desc"
         },
-        // where:{
-        //     published:true
-        // }
     })
     return (
         <HeadearsLikeBlogs header='Our Latest Projects' desc='Explore our latest blogs on design, development, and innovation.'>

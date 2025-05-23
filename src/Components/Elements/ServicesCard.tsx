@@ -5,9 +5,7 @@ type service = {
   id: string;
   title: string;
   description: string;
-  image: {
-    url:string
-  };
+  image:string;
 }
 
 
@@ -18,7 +16,7 @@ function ServicesCard({ item }:{item:service}) {
     >
       <div className="relative">
         <Image
-          src={item.image?.url}
+          src={item.image}
           alt={item.title}
           className='w-20 h-20 transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-110'
         />

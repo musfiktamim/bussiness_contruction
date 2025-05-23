@@ -31,8 +31,6 @@ function ReviewGivepage() {
     if (response.ok) {
       toast.success(result.message);
       redirect("/client_reviews")
-      // Optionally reset form here
-      setFormData({ name: "", email: "", review: "", rate: 0 });
     } else {
       toast.error(result.message || "Failed to submit review");
     }
@@ -45,14 +43,6 @@ function ReviewGivepage() {
       [name]: value,
     }));
   }
-
-  // Slider change handler: Slider usually sends number or array of numbers
-  const handleSliderChange = (value) => {
-    setFormData((prev) => ({
-      ...prev,
-      rate: value,
-    }));
-  };
 
   return (
     <div className="flex px-2 w-full py-10 items-center justify-center">
