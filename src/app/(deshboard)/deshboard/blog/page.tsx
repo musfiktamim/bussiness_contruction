@@ -2,7 +2,6 @@ import HeadearsLikeBlogs from '@/Components/Elements/HeadearsLikeBlogs'
 import { Button } from '@/Components/ui/button'
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/Components/ui/table'
 
-import BlogImage from "../../../../../public/images/blog-1.jpg"
 
 import Image from 'next/image'
 import Link from 'next/link'
