@@ -1,10 +1,5 @@
-import Image from 'next/image';
-// import Image1 from "../../../public/images/project-1.jpg";
 import React from 'react';
 import { Plus } from 'lucide-react';
-// import { CldImage } from "next-cloudinary"
-// import { JsonValue } from '@prisma/client/runtime/library';
-// import
 
 
 type ProjectType = {

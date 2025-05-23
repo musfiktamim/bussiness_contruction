@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useRef, useEffect } from 'react'
+import  { useState, useRef, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper/modules'
 import { sliderData } from '../../lib/ConstSlider'

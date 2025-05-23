@@ -1,11 +1,7 @@
-import React from 'react'
-import { HeaderTextBoxBlack } from './Elements/HeaderTextBox'
 import Link from 'next/link'
 import { Button } from './ui/button'
 import BlogCardSlider from "@/Components/Elements/BlogSlider";
-// import BlogCard from './Elements/Blogcard'
-import blogpic1 from "../../public/images/blog-1.jpg"
-import blogpic2 from "../../public/images/blog-2.jpg"
+
 
 function BlogBox({blogs}) {
 

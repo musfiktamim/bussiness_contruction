@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import { LocationEditIcon, Mail, MenuIcon, Phone, WalletCards, X } from 'lucide-react'
 import { links } from '../lib/ConstSlider';
 

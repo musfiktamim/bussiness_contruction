@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 import { HeaderTextBoxBlack } from './Elements/HeaderTextBox'
 import ReviewsSlider from './Elements/ReviewsSlider'
 import { Button } from './ui/button'

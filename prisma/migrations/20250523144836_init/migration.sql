@@ -34,7 +34,7 @@ CREATE TABLE "Projects" (
 -- CreateTable
 CREATE TABLE "Blogs" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "image" JSONB NOT NULL,
+    "image" JSONB,
     "title" TEXT NOT NULL,
     "content" TEXT NOT NULL,
     "published" BOOLEAN NOT NULL DEFAULT false,

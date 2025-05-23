@@ -1,6 +1,3 @@
-import React from 'react'
-import {OurServices} from "@/lib/ConstSlider"
-import { HeaderTextBoxWhite } from '../../../Components/Elements/HeaderTextBox'
 import ProjectsCard from '../../../Components/Elements/ProjectsCard'
 import prisma from '@/lib/PrismClient'
 import HeadearsLikeBlogs from '@/Components/Elements/HeadearsLikeBlogs'

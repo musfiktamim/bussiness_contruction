@@ -1,7 +1,5 @@
 import { Calendar } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import Blogpic from "../../../public/images/blog-1.jpg";
 
 interface BlogCardProps {
   title: string;

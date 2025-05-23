@@ -1,4 +1,3 @@
-import React from 'react'
 import Homeslider from './Elements/Homeslider'
 
 function HomeBox() {

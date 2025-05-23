@@ -1,4 +1,3 @@
-import React from 'react'
 import prisma from '../../../lib/PrismClient'
 import { ClientReviewCard1 } from "../../../Components/Elements/ClientReviewCard"
 import HeadearsLikeBlogs from "../../../Components/Elements/HeadearsLikeBlogs"

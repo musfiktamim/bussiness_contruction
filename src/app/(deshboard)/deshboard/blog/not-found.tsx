@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import NotImage from "../../../../../public/notfound.svg"
-import Link from 'next/link'
  
 export default function BlogNotFound() {
   return (

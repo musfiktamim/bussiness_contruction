@@ -1,7 +1,4 @@
-import React from 'react'
-import { OurServices } from '../../../lib/ConstSlider'
 import ServicesCard from '../../../Components/Elements/ServicesCard'
-import { HeaderTextBoxBlack, HeaderTextBoxWhite } from '../../../Components/Elements/HeaderTextBox'
 import prisma from '@/lib/PrismClient'
 import HeadearsLikeBlogs from '@/Components/Elements/HeadearsLikeBlogs'
 
