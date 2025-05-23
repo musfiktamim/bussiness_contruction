@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/lib/action.js", "src/app/(root)/client_reviews/new/page.jsx", "src/app/(root)/blogs/page.jsx", "src/Components/Blog/BlogPageBox.jsx", "src/Components/Service/ServiceBoxEdit.jsx", "src/Components/Blog/BlogEditBox.jsx", "src/Components/Blog/BlogEditBox.jsx", "src/app/(root)/blogs/[id]/page.jsx", "src/app/(deshboard)/deshboard/service/page.jsx", "src/app/(deshboard)/deshboard/project/page.jsx", "src/app/(deshboard)/deshboard/blog/[id]/edit/page.tsx"],
+  "exclude": ["node_modules"]
+}

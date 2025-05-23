@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Reviews {
+  id     String @id @unique @default(cuid())
+  name   String
+  email  String @unique
+  review String
+  rate   Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Services {
+  id String @id @unique @default(cuid())
+
+  image       Json
+  title       String
+  description String
+
+  published Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Projects {
+  id String @id @unique @default(cuid())
+
+  image       Json
+  title       String
+  description String
+
+  published Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Blogs {
+  id String @id @unique @default(cuid())
+
+  image   Json?
+  title   String
+  content String
+
+  published Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Contacts {
+  id String @id @unique @default(cuid())
+
+  name    String
+  phone   String
+  email   String
+  message String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Users {
+  id String @id @unique @default(cuid())
+
+  username String
+  email    String
+  password String
+
+  role String @default("user")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
