@@ -8,8 +8,9 @@ import { redirect } from "next/navigation";
 import { toast } from "sonner";
 import { Textarea } from "@/Components/ui/textarea";
 import { Switch } from "@/Components/ui/switch";
+import Image from "next/image";
 
-function BlogEditpage({ item }) {
+function BlogEditBox({ item }) {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     title: item.title || "",
@@ -127,25 +128,34 @@ function BlogEditpage({ item }) {
             aria-label="Upload blog image"
           />
 
-          {formData.preview ? (
+          {formData.preview && (
             <div className="mt-4">
               <p className="text-sm text-gray-600 mb-2">After:</p>
-              <img
-                src={formData.preview}
-                alt="Preview"
-                className="w-full max-h-64 object-contain rounded-md border"
-              />
+              <div className="w-full py-3 max-h-64 border rounded-md">
+                <Image
+                  src={formData.preview}
+                  alt="Project Preview"
+                  width={200}
+                  height={300}
+                  className="object-contain px-2 self-center place-self-center border-gray-500"
+                />
+              </div>
             </div>
-          ) : item.image?.url ? (
+          )}
+          {(!formData.preview || item.image) && (
             <div className="mt-4">
               <p className="text-sm text-gray-600 mb-2">Before:</p>
-              <img
-                src={item.image.url}
-                alt="Original"
-                className="w-full max-h-64 object-contain rounded-md border"
-              />
+              <div className="w-full py-3 max-h-64 border rounded-md">
+                <Image
+                  src={item.image}
+                  alt="Project Preview"
+                  width={200}
+                  height={300}
+                  className="object-contain px-2 self-center place-self-center border-gray-500"
+                />
+              </div>
             </div>
-          ) : null}
+          )}
 
           {/* Publish Toggle */}
           <div className="flex items-center space-x-2 mt-4">
@@ -164,15 +174,25 @@ function BlogEditpage({ item }) {
         {/* Submit */}
         <Button
           disabled={loading}
+          type="button"
+          className="w-fit py-3 px-6 self-end"
+          aria-busy={loading}
+        >
+          Delete
+          {/* {loading ? "Saving..." : "Edit"} */}
+        </Button>
+        <Button
+          disabled={loading}
           type="submit"
           className="w-fit py-3 px-6 self-end"
           aria-busy={loading}
         >
-          {loading ? "Saving..." : "Edit"}
+          Edit
+          {/* {loading ? "Saving..." : "Edit"} */}
         </Button>
       </form>
     </div>
   );
 }
 
-export default BlogEditpage;
+export default BlogEditBox;

@@ -117,6 +117,7 @@ export async function DELETE(request: Request) {
     return NextResponse.json(
       {
         message: "Service deleted successfully",
+        deleted:res.id
       },
       { status: 200 }
     );

@@ -6,7 +6,7 @@ import { Label } from '@/Components/ui/label'
 import { redirect } from 'next/navigation'
 import { toast } from 'sonner'
 import { Textarea } from '@/Components/ui/textarea'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 function BlogNewpage() {
     const [loading, setLoading] = useState(false)
@@ -57,15 +57,15 @@ function BlogNewpage() {
                 toast.error(data.message || "Something went wrong")
             }
             console.log(data)
-            if(response.status!==201){
+            if (response.status !== 201) {
                 toast.error(data.message || "Something went wrong")
-            }else{
+            } else {
                 toast.success(data.message || "Something went wrong")
-                setFormData({description:"",title:"",preview:null})
+                setFormData({ description: "", title: "", preview: null })
             }
         } catch (error) {
-            if(error instanceof Error)
-            toast.error(error.message)
+            if (error instanceof Error)
+                toast.error(error.message)
         } finally {
             setLoading(false);
         }
@@ -86,11 +86,11 @@ function BlogNewpage() {
                 {/* Description */}
                 <div className='flex flex-col gap-2'>
                     <Label className='text-base text-gray-700'>Content</Label>
-                    <Textarea name='description' 
-                      onChange={handleChange} 
-                      value={formData.description} 
-                      placeholder='<p>You can write html in this text box</p>...' 
-                      className='min-h-[100px] max-h-[200px]'
+                    <Textarea name='description'
+                        onChange={handleChange}
+                        value={formData.description}
+                        placeholder='<p>You can write html in this text box</p>...'
+                        className='min-h-[100px] max-h-[200px]'
                     />
                 </div>
 
@@ -106,16 +106,20 @@ function BlogNewpage() {
                     />
 
                     {formData.preview && (
-                        <div className='mt-4'>
-                            <p className='text-sm text-gray-600 mb-2'>Preview:</p>
-                            <Image
-                                src={formData.preview}
-                                alt='Project Preview'
-                                className='w-full max-h-64 object-contain rounded-md border'
-                            />
+                        <div className="mt-4">
+                            <p className="text-sm text-gray-600 mb-2">Preview:</p>
+
+                            <div className="w-full max-h-64 overflow-hidden rounded-md border group">
+                                <img
+                                    src={formData.preview}
+                                    alt="Project Preview"
+                                    className="w-full h-auto max-h-64 object-contain transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                />
+                            </div>
                         </div>
                     )}
                 </div>
+
 
                 {/* Submit */}
                 <Button disabled={loading as boolean} type='submit' className='w-fit py-3 px-6 self-end'>
@@ -127,3 +131,6 @@ function BlogNewpage() {
 }
 
 export default BlogNewpage
+
+
+

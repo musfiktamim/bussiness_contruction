@@ -1,18 +1,19 @@
+import BlogEditBox from '@/Components/Blog/BlogEditBox'
 import ServiceBoxEdit from '@/Components/Service/ServiceBoxEdit'
 import prisma from '@/lib/PrismClient'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
 async function ServiceEditpage({params}:{params:{id:string}}) {
-  const service = await prisma.services.findUnique({
+  const blogs = await prisma.blogs.findUnique({
     where:{
       id:params.id
     }
   })
-  if(!service) notFound();
+  if(!blogs) notFound();
   return (
     <div>
-      <ServiceBoxEdit item={service} />
+      <BlogEditBox item={blogs} />
     </div>
   )
 }
