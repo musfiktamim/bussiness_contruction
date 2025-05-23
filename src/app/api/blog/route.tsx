@@ -45,31 +45,16 @@ export async function POST(request: Request) {
 
 export async function GET(req: NextRequest) {
   try {
-    const { searchParams } = new URL(req.url);
-    const page = Math.max(parseInt(searchParams.get("page") ?? "1", 10), 1);
-    const limit = Math.max(parseInt(searchParams.get("limit") ?? "10", 10), 1);
-
-    const skip = (page - 1) * limit;
 
     const blogs = await prisma.blogs.findMany({
-      skip,
-      take: limit,
+      take: 10,
       orderBy: {
         createdAt: "desc",
       },
     });
 
-    const total = await prisma.blogs.count();
 
-    return NextResponse.json({
-      data: blogs,
-      pagination: {
-        total,
-        page,
-        limit,
-        totalPages: Math.ceil(total / limit),
-      },
-    });
+    return NextResponse.json({data:blogs});
   } catch (error: unknown) {
     if (error instanceof Error) {
       return NextResponse.json(
