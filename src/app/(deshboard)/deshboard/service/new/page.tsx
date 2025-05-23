@@ -106,13 +106,17 @@ function ServiceEditpage() {
                     />
 
                     {formData.preview && (
-                        <div className='mt-4'>
-                            <p className='text-sm text-gray-600 mb-2'>Preview:</p>
-                            <Image
-                                src={formData.preview}
-                                alt='Project Preview'
-                                className='rounded-md w-full max-h-64 border'
-                            />
+                        <div className="mt-4">
+                            <p className="text-sm text-gray-600 mb-2">After:</p>
+                            <div className="w-full py-3 max-h-64 border rounded-md">
+                                <Image
+                                    src={formData.preview}
+                                    alt="Project Preview"
+                                    width={200}
+                                    height={300}
+                                    className="object-contain px-2 self-center place-self-center border-gray-500"
+                                />
+                            </div>
                         </div>
                     )}
                 </div>
