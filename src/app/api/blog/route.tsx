@@ -2,7 +2,7 @@
 
 import cloudinary from "@/lib/cloydinaryConfig";
 import prisma from "@/lib/PrismClient";
-import { NextRequest, NextResponse } from "next/server";
+import {  NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
