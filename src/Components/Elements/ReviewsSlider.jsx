@@ -17,11 +17,12 @@ function ReviewsSlider({reviews}) {
         // autoplay={{ delay: 4000 }}
         pagination={{ clickable: true }}
         breakpoints={{
+          58: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
       >
-        {[...reviews,...reviews,...reviews,...reviews,...reviews,...reviews,...reviews,].map((t, idx) => (
+        {reviews.map((t, idx) => (
           <SwiperSlide key={idx} className="cursor-grab">
             <ClientReviewCard2 t={t} />
           </SwiperSlide>

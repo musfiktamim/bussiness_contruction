@@ -26,7 +26,7 @@ export default function BlogCard({item}:{item:BlogCardProps}) {
         {/* Date badge */}
         <div className="absolute top-4 left-4 px-3 py-1 rounded-full backdrop-blur-md bg-white/40 text-gray-800 text-xs font-medium flex items-center gap-1 shadow-sm">
           <Calendar className="w-4 h-4" />
-          <span>{item.createdAt.toLocaleDateString()}</span>
+          <span>{new Date(item.createdAt).toLocaleDateString()}</span>
         </div>
 
         {/* Overlay effect */}

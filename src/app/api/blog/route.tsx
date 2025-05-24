@@ -43,31 +43,22 @@ export async function POST(request: Request) {
   }
 }
 
-export async function GET() {
-  try {
+export async function GET(request:Request) {
+  const { searchParams } = new URL(request.url);
+  const page = parseInt(searchParams.get("page") || "1");
+  const take = 10;
 
-    const blogs = await prisma.blogs.findMany({
-      take: 10,
-      orderBy: {
-        createdAt: "desc",
-      },
-    });
+  const blogs = await prisma.blogs.findMany({
+    skip: (page - 1) * take,
+    take,
+    orderBy: { createdAt: "asc" },
+  });
 
-
-    return NextResponse.json({data:blogs});
-  } catch (error) {
-    if (error instanceof Error) {
-      return NextResponse.json(
-        { message: error.message },
-        { status: 500 }
-      );
-    }
-    return NextResponse.json(
-      { message: "Unknown error occurred" },
-      { status: 500 }
-    );
-  }
+  return new Response(JSON.stringify(blogs), {
+    headers: { "Content-Type": "application/json" },
+  });
 }
+
 
 export async function PATCH(request: Request) {
   try {

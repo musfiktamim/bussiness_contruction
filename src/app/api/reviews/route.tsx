@@ -50,3 +50,20 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message }, { status: 500 });
   }
 }
+
+
+export async function GET(request:Request) {
+  const { searchParams } = new URL(request.url)
+  const page = parseInt(searchParams.get('page') || '1')
+  const take = 10
+
+  const reviews = await prisma.reviews.findMany({
+    skip: (page - 1) * take,
+    take,
+    orderBy: { createdAt: 'desc' },
+  })
+
+  return new Response(JSON.stringify(reviews), {
+    headers: { 'Content-Type': 'application/json' },
+  })
+}

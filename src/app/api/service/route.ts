@@ -46,8 +46,24 @@ export async function POST(request: Request) {
   }
 }
 
-export async function GET() {
-  return NextResponse.json({ message: "Hello world!" }, { status: 200 });
+export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url);
+  const page = parseInt(searchParams.get('page') || '1');
+  const take = parseInt(searchParams.get('take') || '6');
+  const skip = (page - 1) * take;
+
+  const services = await prisma.services.findMany({
+    skip,
+    take,
+    orderBy: {
+      createdAt: 'desc',
+    },
+    where: {
+      published: true,
+    },
+  });
+
+  return NextResponse.json(services);
 }
 
 export async function PATCH(request: Request) {
