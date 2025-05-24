@@ -19,7 +19,7 @@ export async function descrypt(session){
         })
         return payload;
     }catch(error){
-
+        throw new Error(error.message)
     }
 }
 
