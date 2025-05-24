@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, Suspense } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import BlogPageBox from "@/Components/Blog/BlogPageBox";
 import HeadearsLikeBlogs from "@/Components/Elements/HeadearsLikeBlogs";
@@ -22,7 +22,6 @@ export default function BlogInfiniteScroll() {
       if (fetchedPages.has(pageToFetch)) return;
 
       setLoading(true);
-
       const res = await fetch(`/api/blog?page=${pageToFetch}&take=${TAKE}`);
       const newBlogs = await res.json();
 
@@ -58,7 +57,7 @@ export default function BlogInfiniteScroll() {
       ) {
         const nextPage = page + 1;
         setPage(nextPage);
-        fetchBlogs(nextPage); // ✅ Removed router.replace
+        fetchBlogs(nextPage);
       }
     }
 
@@ -67,15 +66,13 @@ export default function BlogInfiniteScroll() {
   }, [page, loading, hasMore, fetchBlogs]);
 
   return (
-    <Suspense fallback={<p className="text-center mt-5">Loading blogs...</p>}>
-      <HeadearsLikeBlogs
-        header="Our Latest Insights & Stories"
-        desc="Explore our latest blogs on design, development, and innovation."
-      >
-        <BlogPageBox blogPosts={blogs} />
-        {loading && <p className="text-center my-4">Loading more blogs...</p>}
-        {!hasMore && <p className="text-center my-4">No more blogs to load.</p>}
-      </HeadearsLikeBlogs>
-    </Suspense>
+    <HeadearsLikeBlogs
+      header="Our Latest Insights & Stories"
+      desc="Explore our latest blogs on design, development, and innovation."
+    >
+      <BlogPageBox blogPosts={blogs} />
+      {loading && <p className="text-center my-4">Loading more blogs...</p>}
+      {!hasMore && <p className="text-center my-4">No more blogs to load.</p>}
+    </HeadearsLikeBlogs>
   );
 }
