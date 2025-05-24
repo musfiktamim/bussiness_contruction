@@ -15,13 +15,7 @@ import Link from "next/link";
 
 const PAGE_SIZE = 10;
 
-interface SearchParams {
-    searchParams: {
-        page?: string;
-    };
-}
-
-async function Projectpage({ searchParams }: SearchParams) {
+async function Projectpage({ searchParams }) {
     const page = parseInt(searchParams.page || "1", 10);
     if (page < 1) return notFound();
 

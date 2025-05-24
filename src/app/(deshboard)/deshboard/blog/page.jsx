@@ -19,13 +19,8 @@ import { notFound } from 'next/navigation'
 
 const PAGE_SIZE = 10
 
-interface SearchParams {
-  searchParams: {
-    page?: string
-  }
-}
 
-async function Blogpage({ searchParams }: SearchParams) {
+async function Blogpage({ searchParams }) {
   const page = parseInt(searchParams.page || '1', 10)
   if (page < 1) return notFound()
 
@@ -68,7 +63,7 @@ async function Blogpage({ searchParams }: SearchParams) {
         </TableHeader>
         <TableBody>
           {blogs.length > 0 &&
-            blogs.map((item, index: number) => (
+            blogs.map((item, index) => (
               <TableRow key={item.id}>
                 <TableCell className='font-medium'>{skip + index + 1}</TableCell>
                 <TableCell>
