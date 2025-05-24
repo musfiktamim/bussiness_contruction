@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import BlogPageBox from "@/Components/Blog/BlogPageBox";
 import HeadearsLikeBlogs from "@/Components/Elements/HeadearsLikeBlogs";
@@ -67,13 +67,15 @@ export default function BlogInfiniteScroll() {
   }, [page, loading, hasMore, fetchBlogs]);
 
   return (
-    <HeadearsLikeBlogs
-      header="Our Latest Insights & Stories"
-      desc="Explore our latest blogs on design, development, and innovation."
-    >
-      <BlogPageBox blogPosts={blogs} />
-      {loading && <p className="text-center my-4">Loading more blogs...</p>}
-      {!hasMore && <p className="text-center my-4">No more blogs to load.</p>}
-    </HeadearsLikeBlogs>
+    <Suspense fallback={<p className="text-center mt-5">Loading blogs...</p>}>
+      <HeadearsLikeBlogs
+        header="Our Latest Insights & Stories"
+        desc="Explore our latest blogs on design, development, and innovation."
+      >
+        <BlogPageBox blogPosts={blogs} />
+        {loading && <p className="text-center my-4">Loading more blogs...</p>}
+        {!hasMore && <p className="text-center my-4">No more blogs to load.</p>}
+      </HeadearsLikeBlogs>
+    </Suspense>
   );
 }
