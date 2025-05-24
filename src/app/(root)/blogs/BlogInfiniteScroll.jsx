@@ -15,6 +15,7 @@ export default function BlogInfiniteScroll() {
   const [page, setPage] = useState(initialPage);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+  
   const [fetchedPages, setFetchedPages] = useState(new Set());
 
   const fetchBlogs = useCallback(
