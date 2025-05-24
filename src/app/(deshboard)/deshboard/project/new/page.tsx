@@ -5,8 +5,6 @@ import { Input } from '@/Components/ui/input'
 import { Label } from '@/Components/ui/label'
 import { redirect } from 'next/navigation'
 import { toast } from 'sonner'
-import Image from 'next/image'
-
 function ProjectNewpage() {
     const [loading, setLoading] = useState(false)
     const [formData, setFormData] = useState<{
