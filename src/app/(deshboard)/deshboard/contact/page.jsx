@@ -25,11 +25,10 @@ async function Projectpage({ searchParams }) {
         prisma.contacts.findMany({
             take: PAGE_SIZE,
             skip,
-            orderBy: {
-                // createdAt: "desc",
-                // seen:"asc"
-                seen:"asc"
-            },
+            orderBy: [
+                {seen:"asc"},
+                {createdAt:"asc"}
+            ],
         }),
         prisma.contacts.count(),
     ]);

@@ -36,7 +36,7 @@ function Navbar() {
                             <Link key={index} onClick={() => {
                                 setShow((prev) => ({ ...prev, showMenu: false }));
                                 // setHash(links);
-                            }} className={`text-lg hover:text-white px-4 w-full py-2 rounded-md hover:bg-gray-400 bg-gray-200 font-semibold md:bg-transparent md:px-2 md:py-2 transition-all md:text-xl md:hover:bg-gray-400 ${hash == item.link ? "text-amber-200":null} `} href={item.link}>{item.name}</Link>
+                            }} className={`text-lg hover:text-white px-4 w-full py-2 rounded-md text-center hover:bg-gray-400 bg-gray-200 font-semibold md:bg-transparent md:px-2 md:py-2 transition-all md:text-xl md:hover:bg-gray-400 ${hash == item.link ? "text-amber-200":null} `} href={item.link}>{item.name}</Link>
                         ))
                     }
                 </div>

@@ -16,9 +16,9 @@ import { notFound } from "next/navigation";
 
 const PAGE_SIZE = 10;
 
-
+ 
 async function Projectpage({ searchParams }) {
-  const page = parseInt(searchParams.page || "1", 10);
+  const page = parseInt(searchParams?.page || "1", 10);
   if (page < 1) return notFound();
 
   const skip = (page - 1) * PAGE_SIZE;

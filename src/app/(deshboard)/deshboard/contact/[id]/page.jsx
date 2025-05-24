@@ -38,6 +38,9 @@ async function page({params}) {
           </div>
         </div>
       </div>
+
+      
+      
     </div>
   )
 }
