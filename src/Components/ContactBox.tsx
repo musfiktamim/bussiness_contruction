@@ -33,8 +33,8 @@ function ContactBox() {
     try {
 
       await emailjs.send(
-        'service_t8f30ki',
-        'template_7h8se3y',
+        `${process.env.SERVICE_ID}`,
+        `${process.env.TEMPLATE_ID}`,
         {
           name:formData.name + " " + formData.email,
           subject:formData.name + formData.email ,
@@ -43,7 +43,7 @@ function ContactBox() {
           from_email:formData.email,
           to_email:"musfiktamim2@gmail.com"
         },
-        '1i7JefrkVIBAyGKxY'
+        `${process.env.PUBLIC_KEY}`
       );
 
 
