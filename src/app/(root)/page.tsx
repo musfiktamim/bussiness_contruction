@@ -105,7 +105,7 @@ import BlogBox from "@/Components/BlogBox";
 import ClientReviewsBox from "@/Components/ClientReviewsBox"; // Fixed import path
 
 async function Homepage() {
-  const res = await fetch(`/api/homepage-data`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/homepage-data`, {
     cache: "no-store", // Ensure fresh data on each request (optional)
   });
 
