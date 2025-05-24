@@ -7,7 +7,6 @@ import { Textarea } from './ui/textarea'
 import { Button } from './ui/button'
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { toast } from 'sonner';
-import { redirect } from 'next/dist/server/api-utils';
 
 function ContactBox() {
     const [loading,setLoading] = useState(false);
