@@ -90,7 +90,7 @@ function ContactBox() {
                         <Label>Message</Label>
                         <Textarea value={formData.message} onChange={e=>setFormData((prev)=>({...prev,message:e.target.value}))} placeholder='Message...' name='message' maxLength={1000} required className='min-h-32 max-h-52' />
                     </div>
-                    <Button type='submit' variant={"default"}>Send</Button>
+                    <Button disabled={loading} type='submit' variant={"default"}>Send</Button>
                 </form>
             </div>
         </div>
