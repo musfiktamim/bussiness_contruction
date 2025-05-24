@@ -21,7 +21,7 @@ export function ClientReviewCard1({ t }) {
           className="rounded-full object-cover transition duration-300 group-hover:grayscale-0 grayscale"
         />
         <div className="flex flex-col gap-1 text-xs sm:text-sm">
-          <h4 className="font-semibold text-base group-hover:text-amber-600 transition-colors">{t.name}</h4>
+          <h4 className="font-semibold text-base group-hover:text-[#A26652] transition-colors">{t.name}</h4>
           <div className="text-gray-500 leading-tight">
             <p>
               {new Date(t?.createdAt).getDate()} {months[new Date(t?.createdAt).getMonth()]} {new Date(t?.createdAt).getFullYear()}
@@ -51,6 +51,7 @@ export function ClientReviewCard2({ t }) {
       className="
         bg-white rounded-xl shadow-md p-6 flex flex-col justify-between
         min-w-[280px]
+        my-5
         snap-start
         transition-all duration-300
         hover:shadow-xl hover:scale-[1.03] group
@@ -72,7 +73,7 @@ export function ClientReviewCard2({ t }) {
           className="rounded-full object-cover grayscale group-hover:grayscale-0 transition duration-300"
         />
         <div className="flex flex-col gap-1">
-          <h4 className="font-semibold text-base group-hover:text-amber-600 transition-colors">{t.name}</h4>
+          <h4 className="font-semibold text-base group-hover:text-[#A26652] transition-colors">{t.name}</h4>
           <div className="text-xs text-gray-500 flex gap-2 flex-wrap">
             <p>
               {(createdAt.getHours() % 12 || 12)}:

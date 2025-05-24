@@ -120,12 +120,12 @@ export const links = [
         link: "/#projects"
     },
     {
-        name: "Contact",
-        link: "/#contact"
-    },
-    {
         name: "Blogs",
         link: "/#blogs"
+    },
+    {
+        name: "Contact",
+        link: "/#contact"
     },
 ]
 

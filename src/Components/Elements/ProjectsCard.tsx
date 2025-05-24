@@ -41,7 +41,7 @@ function ProjectsCard({ item }: { item: ProjectType }) {
                             }
                         </p>
                     </div>
-                    <div className="w-10 h-10 bg-amber-400 rounded-full flex items-center justify-center hover:rotate-90 transition-all duration-300">
+                    <div className="w-10 h-10 bg-[#A26652] rounded-full flex items-center justify-center hover:rotate-90 transition-all duration-300">
                         <Plus className="text-white" />
                     </div>
                 </div>

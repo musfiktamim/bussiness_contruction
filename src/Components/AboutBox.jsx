@@ -38,7 +38,7 @@ function AboutBox() {
           </p>
           <button
             onClick={handleClick}
-            className='w-fit px-4 py-3 text-lg bg-black text-white hover:bg-amber-400 transition-all duration-500 ease-in-out hover:text-black rounded-md shadow-md hover:shadow-lg active:scale-95'
+            className='w-fit px-4 py-3 text-lg bg-black text-white hover:bg-[#A26652] transition-all duration-500 ease-in-out rounded-md shadow-md hover:shadow-lg active:scale-95'
           >
             Read More
           </button>
