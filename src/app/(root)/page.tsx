@@ -46,7 +46,7 @@ async function Homepage() {
       published: true
     }
   })
-
+  console.log(blogs);
   return (
     <div className="mt-2 flex flex-col">
       <HomeBox />
