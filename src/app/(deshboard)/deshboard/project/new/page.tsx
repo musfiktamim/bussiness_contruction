@@ -101,13 +101,16 @@ function ProjectNewpage() {
                     />
 
                     {formData.preview && (
-                        <div className='mt-4'>
-                            <p className='text-sm text-gray-600 mb-2'>Preview:</p>
-                            <Image
-                                src={formData.preview}
-                                alt='Project Preview'
-                                className='w-full max-h-64 object-contain rounded-md border'
-                            />
+                        <div className="mt-4">
+                            <p className="text-sm text-gray-600 mb-2">Preview:</p>
+
+                            <div className="w-full max-h-64 overflow-hidden rounded-md border group">
+                                <img
+                                    src={formData.preview}
+                                    alt="Project Preview"
+                                    className="w-full h-auto max-h-64 object-contain transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                />
+                            </div>
                         </div>
                     )}
                 </div>

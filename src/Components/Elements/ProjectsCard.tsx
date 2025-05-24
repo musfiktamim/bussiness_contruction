@@ -1,6 +1,5 @@
 import React from 'react';
 import { Plus } from 'lucide-react';
-import Image from 'next/image';
 
 
 type ProjectType = {
@@ -17,7 +16,7 @@ function ProjectsCard({ item }: { item: ProjectType }) {
         <div className="w-[95%] sm:w-[330px] md:min-w-[330px] relative overflow-hidden group h-[400px] shadow-lg rounded-xl bg-white transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
 
             {/* Background Image */}
-            <Image
+            <img
                 src={item.image}
                 alt={item?.title || "Project Image"}
                 className="w-full h-full object-cover absolute top-0 left-0 z-0 transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:grayscale"

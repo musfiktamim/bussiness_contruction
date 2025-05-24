@@ -10,11 +10,11 @@ import { Textarea } from "@/Components/ui/textarea";
 import { Switch } from "@/Components/ui/switch";
 import Image from "next/image";
 
-function BlogEditBox({ item }) {
+function ProjectEditBox({ item }) {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     title: item.title || "",
-    description: `${item.content}` || ``,
+    description: item.description || "",
     preview: null,
     publish: !!item.published,
   });
@@ -42,7 +42,7 @@ function BlogEditBox({ item }) {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/blog", {
+      const response = await fetch("/api/project", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ function BlogEditBox({ item }) {
         body: JSON.stringify({
           id: item.id,
           title: formData.title,
-          content: formData.description,
+          description: formData.description,
           publish: formData.publish,
           preview: formData.preview,
         }),
@@ -74,7 +74,7 @@ function BlogEditBox({ item }) {
     } finally {
       setLoading(false);
     }
-    redirect("/deshboard/blog");
+    redirect("/deshboard/project");
   };
 
   return (
@@ -197,4 +197,4 @@ function BlogEditBox({ item }) {
   );
 }
 
-export default BlogEditBox;
+export default ProjectEditBox;

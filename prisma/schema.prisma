@@ -70,6 +70,8 @@ model Contacts {
   email   String @db.VarChar(100)
   message String @db.VarChar(2000)
 
+  seen Boolean @default(false)
+  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

@@ -67,3 +67,55 @@ export async function GET() {
     { status: 200 }
   );
 }
+
+
+export async function PATCH(request: Request) {
+  try {
+    const { id, title, description, preview, publish } = await request.json();
+
+    if (!id) {
+      return NextResponse.json(
+        { message: "Project ID is required" },
+        { status: 400 }
+      );
+    }
+
+    const updatedData: Partial<{
+      title: string;
+      description: string;
+      published: boolean;
+      image: string;
+    }> = {};
+
+    if (title) updatedData.title = title;
+    if (description) updatedData.description = description;
+    if (publish !== undefined && publish !== null)
+      updatedData.published = Boolean(publish);
+
+    if (preview) {
+      const uploaded = await cloudinary.uploader.upload(preview);
+      if (uploaded.secure_url) updatedData.image = uploaded.secure_url;
+    }
+
+    const updatedBlog = await prisma.projects.update({
+      where: { id },
+      data: updatedData,
+    });
+
+    return NextResponse.json({
+      message: "Project updated successfully",
+      blog: updatedBlog,
+    });
+  } catch (error) {
+    if (error instanceof Error) {
+      return NextResponse.json(
+        { message: error.message },
+        { status: 500 }
+      );
+    }
+    return NextResponse.json(
+      { message: "Unknown error occurred" },
+      { status: 500 }
+    );
+  }
+}

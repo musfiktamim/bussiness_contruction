@@ -5475,6 +5475,7 @@ export namespace Prisma {
     phone: string | null
     email: string | null
     message: string | null
+    seen: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5485,6 +5486,7 @@ export namespace Prisma {
     phone: string | null
     email: string | null
     message: string | null
+    seen: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5495,6 +5497,7 @@ export namespace Prisma {
     phone: number
     email: number
     message: number
+    seen: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -5507,6 +5510,7 @@ export namespace Prisma {
     phone?: true
     email?: true
     message?: true
+    seen?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -5517,6 +5521,7 @@ export namespace Prisma {
     phone?: true
     email?: true
     message?: true
+    seen?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -5527,6 +5532,7 @@ export namespace Prisma {
     phone?: true
     email?: true
     message?: true
+    seen?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -5610,6 +5616,7 @@ export namespace Prisma {
     phone: string
     email: string
     message: string
+    seen: boolean
     createdAt: Date
     updatedAt: Date
     _count: ContactsCountAggregateOutputType | null
@@ -5637,6 +5644,7 @@ export namespace Prisma {
     phone?: boolean
     email?: boolean
     message?: boolean
+    seen?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["contacts"]>
@@ -5647,6 +5655,7 @@ export namespace Prisma {
     phone?: boolean
     email?: boolean
     message?: boolean
+    seen?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["contacts"]>
@@ -5657,6 +5666,7 @@ export namespace Prisma {
     phone?: boolean
     email?: boolean
     message?: boolean
+    seen?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["contacts"]>
@@ -5667,11 +5677,12 @@ export namespace Prisma {
     phone?: boolean
     email?: boolean
     message?: boolean
+    seen?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type ContactsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "phone" | "email" | "message" | "createdAt" | "updatedAt", ExtArgs["result"]["contacts"]>
+  export type ContactsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "phone" | "email" | "message" | "seen" | "createdAt" | "updatedAt", ExtArgs["result"]["contacts"]>
 
   export type $ContactsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Contacts"
@@ -5682,6 +5693,7 @@ export namespace Prisma {
       phone: string
       email: string
       message: string
+      seen: boolean
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["contacts"]>
@@ -6112,6 +6124,7 @@ export namespace Prisma {
     readonly phone: FieldRef<"Contacts", 'String'>
     readonly email: FieldRef<"Contacts", 'String'>
     readonly message: FieldRef<"Contacts", 'String'>
+    readonly seen: FieldRef<"Contacts", 'Boolean'>
     readonly createdAt: FieldRef<"Contacts", 'DateTime'>
     readonly updatedAt: FieldRef<"Contacts", 'DateTime'>
   }
@@ -7573,6 +7586,7 @@ export namespace Prisma {
     phone: 'phone',
     email: 'email',
     message: 'message',
+    seen: 'seen',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -7953,6 +7967,7 @@ export namespace Prisma {
     phone?: StringFilter<"Contacts"> | string
     email?: StringFilter<"Contacts"> | string
     message?: StringFilter<"Contacts"> | string
+    seen?: BoolFilter<"Contacts"> | boolean
     createdAt?: DateTimeFilter<"Contacts"> | Date | string
     updatedAt?: DateTimeFilter<"Contacts"> | Date | string
   }
@@ -7963,6 +7978,7 @@ export namespace Prisma {
     phone?: SortOrder
     email?: SortOrder
     message?: SortOrder
+    seen?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -7976,6 +7992,7 @@ export namespace Prisma {
     phone?: StringFilter<"Contacts"> | string
     email?: StringFilter<"Contacts"> | string
     message?: StringFilter<"Contacts"> | string
+    seen?: BoolFilter<"Contacts"> | boolean
     createdAt?: DateTimeFilter<"Contacts"> | Date | string
     updatedAt?: DateTimeFilter<"Contacts"> | Date | string
   }, "id" | "id">
@@ -7986,6 +8003,7 @@ export namespace Prisma {
     phone?: SortOrder
     email?: SortOrder
     message?: SortOrder
+    seen?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: ContactsCountOrderByAggregateInput
@@ -8002,6 +8020,7 @@ export namespace Prisma {
     phone?: StringWithAggregatesFilter<"Contacts"> | string
     email?: StringWithAggregatesFilter<"Contacts"> | string
     message?: StringWithAggregatesFilter<"Contacts"> | string
+    seen?: BoolWithAggregatesFilter<"Contacts"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"Contacts"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Contacts"> | Date | string
   }
@@ -8354,6 +8373,7 @@ export namespace Prisma {
     phone: string
     email: string
     message: string
+    seen?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -8364,6 +8384,7 @@ export namespace Prisma {
     phone: string
     email: string
     message: string
+    seen?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -8374,6 +8395,7 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
+    seen?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8384,6 +8406,7 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
+    seen?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8394,6 +8417,7 @@ export namespace Prisma {
     phone: string
     email: string
     message: string
+    seen?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -8404,6 +8428,7 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
+    seen?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8414,6 +8439,7 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
+    seen?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8720,6 +8746,7 @@ export namespace Prisma {
     phone?: SortOrder
     email?: SortOrder
     message?: SortOrder
+    seen?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -8730,6 +8757,7 @@ export namespace Prisma {
     phone?: SortOrder
     email?: SortOrder
     message?: SortOrder
+    seen?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -8740,6 +8768,7 @@ export namespace Prisma {
     phone?: SortOrder
     email?: SortOrder
     message?: SortOrder
+    seen?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }

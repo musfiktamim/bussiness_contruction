@@ -7,7 +7,6 @@ function layout({children}) {
         <div>
             {children}
         </div>
-        <RootFooter />
     </div>
   )
 }
